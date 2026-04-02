@@ -1,5 +1,5 @@
 import { useAuth } from '@clerk/expo'
-import { AuthView } from '@clerk/expo/native'
+import { AuthView } from '../../components/clerk-safe'
 import { useRouter } from 'expo-router'
 import { useEffect } from 'react'
 

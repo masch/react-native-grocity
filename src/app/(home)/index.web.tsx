@@ -1,5 +1,4 @@
 import { Show, useClerk, useUser } from '@clerk/expo'
-import { UserButton, UserProfileView } from '../../components/clerk-safe'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 export default function Page() {
@@ -16,11 +15,9 @@ export default function Page() {
                     <Text style={styles.buttonText}>Sign out</Text>
                 </Pressable>
 
-                <View style={{ width: 36, height: 36, borderRadius: 18, overflow: 'hidden' }}>
-                    <UserButton />
+                <View style={{ marginTop: 20 }}>
+                    <Text>User Button and Profile are only available on Native.</Text>
                 </View>
-
-                <UserProfileView style={{ flex: 1 }} />
             </Show>
         </View>
     )
