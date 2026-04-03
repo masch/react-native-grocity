@@ -1,4 +1,4 @@
-.PHONY: install android ios web start clean android-run ios-run
+.PHONY: install android ios web start clean android-run ios-run lint
 
 install:
 	bun install
@@ -21,7 +21,10 @@ web:
 start:
 	bun run start
 
+lint:
+	bun run lint
+
 clean:
-	rm -rf node_modules apps/*/node_modules packages/*/node_modules
+	rm -rf node_modules
 	bun cache clean
-	@echo "🧼 All clean. Run 'make setup' again."
+	@echo "🧼 All clean. Run 'make install' again."

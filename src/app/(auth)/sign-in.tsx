@@ -1,17 +1,12 @@
-import { useAuth } from '@clerk/expo'
-import { AuthView } from '../../components/clerk-safe'
-import { useRouter } from 'expo-router'
-import { useEffect } from 'react'
+import useSocialAuth from '@/hooks/useSocialAuth'
+import { Text, View } from 'react-native'
 
 export default function SignInScreen() {
-    const { isSignedIn } = useAuth({ treatPendingAsSignedOut: false })
-    const router = useRouter()
+    const { handleSocialAuth, loadingStrategy } = useSocialAuth()
 
-    useEffect(() => {
-        if (isSignedIn) {
-            router.replace('/(home)')
-        }
-    }, [isSignedIn])
-
-    return <AuthView mode="signInOrUp" />
+    return (
+        <View className='flex-1 justify-center items-center'>
+            <Text>HEY!</Text>
+        </View>
+    )
 }
