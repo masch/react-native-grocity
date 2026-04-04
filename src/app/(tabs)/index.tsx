@@ -1,6 +1,6 @@
 import { Show, useClerk, useUser } from '@clerk/expo'
-import { UserButton, UserProfileView } from '../../components/clerk-safe'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { UserButton, UserProfileView } from '../../components/clerk-safe'
 
 export default function Page() {
     const { user } = useUser()
