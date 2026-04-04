@@ -69,7 +69,7 @@ export const deleteGroceryItem = async (id: string) => {
     return row;
 }
 
-export const clearPurchaedItems = async () => {
+export const clearPurchasedItems = async () => {
     const [row] = await db
         .delete(groceryItems)
         .where(eq(groceryItems.purchased, true))
