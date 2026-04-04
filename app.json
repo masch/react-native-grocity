@@ -42,7 +42,10 @@
           }
         }
       ],
-      "expo-web-browser"
+      "expo-web-browser",
+      "expo-secure-store",
+      "expo-font",
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,

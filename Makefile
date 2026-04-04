@@ -54,6 +54,9 @@ android-restart: android-stop
 	@sleep 1
 	$(EMULATOR) @$(FIRST_AVD) &
 
+fix-deps:
+	bun run expo-fix-deps
+
 clean:
 	rm -rf .expo
 	rm -rf node_modules
