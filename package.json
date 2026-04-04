@@ -11,14 +11,19 @@
     "ios": "expo start --go --ios",
     "ios:native": "expo run:ios",
     "web": "expo start --web --port 7777",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "db:push": "drizzle-kit push",
+    "db:seed:grocery": "bun ./scripts/seed-grocery.js"
   },
   "dependencies": {
     "@clerk/expo": "^3.1.5",
     "@expo/vector-icons": "^15.0.3",
+    "@neondatabase/serverless": "^1.0.2",
     "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/elements": "^2.6.3",
     "@react-navigation/native": "^7.1.8",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
     "expo": "~54.0.33",
     "expo-auth-session": "~7.0.10",
     "expo-constants": "~18.0.13",

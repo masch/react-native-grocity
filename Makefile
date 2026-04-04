@@ -1,4 +1,4 @@
-.PHONY: install android android-native ios ios-native web start start-native start-clean clean android-reset lint
+.PHONY: install android android-native db-push ios ios-native web start start-native start-clean clean android-reset android-stop android-restart lint
 
 ANDROID_HOME ?= $(HOME)/dev/android/sdk
 EMULATOR = $(ANDROID_HOME)/emulator/emulator
@@ -34,9 +34,25 @@ start-clean:
 lint:
 	bun run lint
 
+db-push:
+	bun run db:push
+
+db-seed-grocery:
+	bun run db:seed:grocery
+
 android-reset:
 	@echo "🚀 Resetting the emulator: $(FIRST_AVD)..."
 	$(EMULATOR) @$(FIRST_AVD) -wipe-data &
+
+android-stop:
+	@echo "🛑 Stopping the emulator..."
+	-pkill -9 emulator
+	-pkill -9 qemu-system
+
+android-restart: android-stop
+	@echo "🔄 Restarting the emulator: $(FIRST_AVD)..."
+	@sleep 1
+	$(EMULATOR) @$(FIRST_AVD) &
 
 clean:
 	rm -rf .expo
